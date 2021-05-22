@@ -6,10 +6,10 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - run: mkdir output
-      - uses: docker://pandoc/latex:2.9
+      - uses: docker://pandoc/latex:2.13
         with:
           args: "--output=output/user-guide.pdf -H head.tex -f gfm --shift-heading-level-by -1 user-guide.md"
       - uses: actions/upload-artifact@master
         with:
-          name: output
-          path: output
+          name: user-guide.pdf
+          path: output/user-guide.pdf
