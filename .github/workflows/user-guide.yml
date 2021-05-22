@@ -1,0 +1,15 @@
+name: build-user-guide
+on: [push]
+jobs:
+  build-user-guide:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - run: mkdir output
+      - uses: docker://pandoc/latex:2.9
+        with:
+          args: "--output=output/user-guide.pdf -H head.tex -f gfm --shift-heading-level-by -1 user-guide.md"
+      - uses: actions/upload-artifact@master
+        with:
+          name: output
+          path: output

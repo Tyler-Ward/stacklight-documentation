@@ -1,7 +1,16 @@
+---
+title: POE stack light user guide
+subtitle: "hardware v1.0 software v1.0"
+
+documentclass: scrartcl
+geometry: a5paper
+toc: true
+---
+
 Stack Light User Guide
 ======================
 
-connections and indicators
+Connections and Indicators
 --------------------------
 
 ![Front view](figures/front_labeled.png)
@@ -32,8 +41,8 @@ Channel | Function
 1 | Red segment intensity
 2 | Yellow segment intensity
 3 | Green segment intensity
-4 | Buzzer intensity (value causes both tone and volume change)
-
+4 | Buzzer intensity
+| | (value causes both tone and volume change)
 ##### HTTP API
 
 To control the light over HTTP you can either use the web interface or can set the state using a post message to the set endpoint. an example command and the list of valid mode parameters are shown below
@@ -76,12 +85,8 @@ The POE stack light has been created by Tyler Ward www.scorpia.co.uk
 
 The POE stack light is opensource hardware. The Hardware and documentation are CC-BY-SA-4.0 and the firmware is MIT licenced. Source code and design files can be found at the following links
 
-* [Hardware](https://github.com/Tyler-Ward/stacklight-hardware)
-* [Firmware](https://github.com/Tyler-Ward/stacklight-firmware)
-* [Documentation](https://github.com/Tyler-Ward/stacklight-documentation)
+* Hardware - https://github.com/Tyler-Ward/stacklight-hardware
+* Firmware - https://github.com/Tyler-Ward/stacklight-firmware
+* Documentation - https://github.com/Tyler-Ward/stacklight-documentation
 
-#### Additional Acknowledgements
-
-![Art-net Logo](figures/Art-Net-logo.png)
-
-Art-Net™ Designed by and Copyright Artistic Licence Holdings Ltd
+This device implements the ART-Net Specification. Art-Net™ Designed by and Copyright Artistic Licence Holdings Ltd.

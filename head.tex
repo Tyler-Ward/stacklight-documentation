@@ -1,0 +1,5 @@
+\let\oldtoc\tableofcontents
+\renewcommand{\tableofcontents}{\oldtoc\newpage}
+
+\let\oldsection\section
+\renewcommand\section{\clearpage\oldsection}
