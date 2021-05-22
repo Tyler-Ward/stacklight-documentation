@@ -1,7 +1,7 @@
-name: build-user-guide
+name: build-documentation
 on: [push]
 jobs:
-  build-user-guide:
+  build-documentation:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -9,7 +9,10 @@ jobs:
       - uses: docker://pandoc/latex:2.13
         with:
           args: "--output=output/user-guide.pdf -H head.tex -f gfm --shift-heading-level-by -1 user-guide.md"
+      - uses: docker://pandoc/latex:2.13
+        with:
+          args: "--output=output/construction-guide.pdf -H head.tex -f gfm --shift-heading-level-by -1 construction-guide.md"
       - uses: actions/upload-artifact@master
         with:
-          name: user-guide.pdf
-          path: output/user-guide.pdf
+          name: output
+          path: output
